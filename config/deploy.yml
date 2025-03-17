@@ -51,6 +51,7 @@ env:
     DECIDIM_DEFAULT_LOCALE: "ca"
     STORAGE_PROVIDER: s3
     DECIDIM_FORCE_SSL: false
+    RAILS_ENV: production
   secret:
     - RAILS_MASTER_KEY
     - SECRET_KEY_BASE
