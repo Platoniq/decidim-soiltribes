@@ -35,8 +35,7 @@ RUN bundle install --without development test
 
 COPY package.json /app
 COPY package-lock.json /app
-RUN npm ci
-RUN yarn install
+RUN npm i
 
 COPY . /app
 RUN RAILS_ENV=production SECRET_KEY_BASE=build bin/rails assets:precompile
