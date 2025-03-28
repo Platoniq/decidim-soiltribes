@@ -35,7 +35,7 @@ RUN bundle install --without development test
 
 COPY package.json /app
 COPY package-lock.json /app
-RUN yarn install --check-files
+RUN yarn install --check-files --ignore-engines
 
 COPY . /app
 RUN RAILS_ENV=production SECRET_KEY_BASE=build bin/rails assets:precompile
