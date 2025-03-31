@@ -567,6 +567,10 @@ GEM
     parser (3.3.0.5)
       ast (~> 2.4.1)
       racc
+    passenger (6.0.23)
+      rack (>= 1.6.13)
+      rackup
+      rake (>= 12.3.3)
     pg (1.4.6)
     pg_search (2.3.6)
       activerecord (>= 5.2)
@@ -597,6 +601,9 @@ GEM
       rack
     rack-test (2.1.0)
       rack (>= 1.3)
+    rackup (1.0.1)
+      rack (< 3)
+      webrick
     rails (7.0.8.4)
       actioncable (= 7.0.8.4)
       actionmailbox (= 7.0.8.4)
@@ -809,6 +816,7 @@ GEM
       addressable (>= 2.8.0)
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
+    webrick (1.9.1)
     websocket (1.2.10)
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
@@ -844,7 +852,9 @@ DEPENDENCIES
   net-imap (~> 0.2.3)
   net-pop (~> 0.1.1)
   net-smtp (~> 0.3.1)
+  passenger
   puma (>= 6.3.1)
+  sidekiq
   web-console (~> 4.2)
   wicked_pdf (~> 2.1)
 
