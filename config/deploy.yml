@@ -68,6 +68,7 @@ env:
     - AWS_SECRET_ACCESS_KEY
     - AWS_REGION
     - AWS_BUCKET
+    - REDIS_URL
 
 
 # Aliases are triggered with "bin/kamal <alias>". You can overwrite arguments on invocation:
