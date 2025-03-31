@@ -16,6 +16,8 @@ gem "puma", ">= 6.3.1"
 
 gem "wicked_pdf", "~> 2.1"
 
+gem "figaro", "~> 1.2"
+
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
 
@@ -30,8 +32,17 @@ group :development do
   gem "letter_opener_web", "~> 2.0"
   gem "listen", "~> 3.1"
   gem "web-console", "~> 4.2"
+
+  gem "capistrano", "~> 3.19"
+  gem "capistrano-rails", "~> 1.7"
+  gem "capistrano-sidekiq", "~> 3.0"
+  gem "capistrano-bundler"
+  gem "capistrano-passenger"
+  gem "capistrano-rails-console"
+  gem "capistrano-rbenv"
 end
 
 group :production do
   gem "aws-sdk-s3", require: false
 end
+
