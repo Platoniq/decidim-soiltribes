@@ -5,6 +5,7 @@ source "https://rubygems.org"
 ruby RUBY_VERSION
 
 gem "decidim", "0.29.2"
+gem "decidim-decidim_awesome"
 # gem "decidim-conferences", "0.29.2"
 # gem "decidim-design", "0.29.2"
 # gem "decidim-initiatives", "0.29.2"
@@ -33,5 +34,5 @@ group :development do
 end
 
 group :production do
-  gem "aws-sdk-s3", require: false
+  gem "aws-sdk-s3", "1.160.0", require: false
 end
