@@ -12,6 +12,33 @@ servers:
     hosts:
       - 188.34.186.145
     cmd: "bundle exec sidekiq -e production"
+    env:
+      clear:
+        RAILS_SERVE_STATIC_FILES: true
+        DECIDIM_APPLICATION_NAME: "Soiltribes"
+        DECIDIM_MAILER_SENDER: no-reply@platoniq.net
+        DECIDIM_AVAILABLE_LOCALES: "en,es,ca"
+        DECIDIM_DEFAULT_LOCALE: "ca"
+        STORAGE_PROVIDER: s3
+        DECIDIM_FORCE_SSL: false
+        RAILS_ENV: production
+      secret:
+        - RAILS_MASTER_KEY
+        - SECRET_KEY_BASE
+        - DATABASE_URL
+        - SMTP_ADDRESS
+        - SMTP_USERNAME
+        - SMTP_PASSWORD
+        - SMTP_DOMAIN
+        - SMTP_STARTTLS_AUTO
+        - POSTGRES_PASSWORD
+        - POSTGRES_USER
+        - POSTGRES_DB
+        - AWS_ACCESS_KEY_ID
+        - AWS_SECRET_ACCESS_KEY
+        - AWS_REGION
+        - AWS_BUCKET
+        - REDIS_URL
 
 # Enable SSL auto certification via Let's Encrypt and allow for multiple apps on a single web server.
 # Remove this section when using multiple web servers and ensure you terminate SSL at your load balancer.
