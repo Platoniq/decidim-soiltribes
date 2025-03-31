@@ -36,3 +36,5 @@ end
 group :production do
   gem "aws-sdk-s3", "1.160.0", require: false
 end
+
+gem "sidekiq", "~> 7.3"
