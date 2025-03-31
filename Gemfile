@@ -43,7 +43,8 @@ group :development do
 end
 
 group :production do
-  gem "aws-sdk-s3", require: false
+  gem "aws-sdk-s3", "1.152.1", require: false
+  gem "aws-sdk-core", "3.197.0"
   gem "passenger"
   gem "sidekiq"
 end
