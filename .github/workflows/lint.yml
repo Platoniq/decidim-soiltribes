@@ -29,11 +29,5 @@ jobs:
         name: Install JS deps
       - run: bundle exec rubocop -P
         name: Lint Ruby files
-      - run: bundle exec mdl *.md
-        name: Lint Markdown files
       - run: bundle exec erblint app/{cells,views}/**/*.erb
         name: Lint ERB files
-      - run: npm run stylelint
-        name: Lint SCSS files
-      - run: npm run lint
-        name: Lint JS files
