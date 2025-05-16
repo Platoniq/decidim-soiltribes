@@ -1,4 +1,13 @@
 GIT
+  remote: https://github.com/HHassig/decidim-module-term_customizer.git
+  revision: 818eada3f63d9fbc5d53f2c6d17882605bd6cb82
+  branch: release/0.29.2
+  specs:
+    decidim-term_customizer (0.29.0)
+      decidim-admin (~> 0.29.2)
+      decidim-core (~> 0.29.2)
+
+GIT
   remote: https://github.com/Platoniq/decidim-superspace
   revision: 06ecddc4887f6afaa98824c34f598ea4ee54fa0e
   branch: main
@@ -813,6 +822,7 @@ DEPENDENCIES
   decidim-decidim_awesome
   decidim-dev (= 0.29.2)
   decidim-superspaces!
+  decidim-term_customizer!
   letter_opener_web (~> 2.0)
   listen (~> 3.1)
   net-imap (~> 0.2.3)
