@@ -11,8 +11,7 @@ gem "decidim-superspaces", git: "https://github.com/Platoniq/decidim-superspace"
 # gem "decidim-design", "0.29.2"
 # gem "decidim-initiatives", "0.29.2"
 # gem "decidim-templates", "0.29.2"
-gem "decidim-term_customizer", git: "https://github.com/HHassig/decidim-module-term_customizer.git", branch: "release/0.29.2"
-
+gem "decidim-term_customizer", git: "https://github.com/Platoniq/decidim-module-term_customizer", branch: "master"
 gem "bootsnap", "~> 1.3"
 
 gem "puma", ">= 6.3.1"

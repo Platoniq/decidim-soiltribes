@@ -1,11 +1,11 @@
 GIT
-  remote: https://github.com/HHassig/decidim-module-term_customizer.git
-  revision: 818eada3f63d9fbc5d53f2c6d17882605bd6cb82
-  branch: release/0.29.2
+  remote: https://github.com/Platoniq/decidim-module-term_customizer
+  revision: 3da4973f52649534fa9cc2acaaa4d89176a19351
+  branch: master
   specs:
     decidim-term_customizer (0.29.0)
-      decidim-admin (~> 0.29.2)
-      decidim-core (~> 0.29.2)
+      decidim-admin (~> 0.29.0)
+      decidim-core (~> 0.29.0)
 
 GIT
   remote: https://github.com/Platoniq/decidim-superspace
