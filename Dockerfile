@@ -32,7 +32,6 @@ WORKDIR /app
 COPY Gemfile /app
 COPY Gemfile.lock /app
 RUN bundle install --without development test
-RUN bundle show decidim-decidim_awesome
 
 COPY package.json /app
 COPY package-lock.json /app
@@ -50,6 +49,6 @@ COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT ["/usr/bin/entrypoint.sh"]
 
-# HEALTHCHECK --interval=60s CMD curl -f http://localhost:3000/api || exit 1
+HEALTHCHECK CMD curl -f http://localhost:3000/api || exit 1
 
 CMD ["bin/rails", "server", "-b", "0.0.0.0"]
