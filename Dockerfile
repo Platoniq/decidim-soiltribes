@@ -49,6 +49,6 @@ COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT ["/usr/bin/entrypoint.sh"]
 
-HEALTHCHECK --interval=5s --timeout=10s --retries=3 CMD curl -f http://localhost:3000/api || exit 1g
+HEALTHCHECK CMD curl -f http://localhost:3000/api || exit 1
 
 CMD ["bin/rails", "server", "-b", "0.0.0.0"]
