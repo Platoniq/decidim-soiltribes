@@ -12,6 +12,8 @@ servers:
     hosts:
       - 188.34.186.145
     cmd: "bundle exec sidekiq -e production"
+    env:
+      REDIS_URL: "redis://redis:6379"
 
 # Enable SSL auto certification via Let's Encrypt and allow for multiple apps on a single web server.
 # Remove this section when using multiple web servers and ensure you terminate SSL at your load balancer.
