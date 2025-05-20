@@ -15,11 +15,10 @@ servers:
     env:
       REDIS_URL: "redis://redis:6379"
   roles:
-    web:
-      healthcheck:
-        timeout: 60s
-        interval: 5s
-        retries: 3
+    healthcheck:
+      timeout: 60s
+      interval: 5s
+      retries: 3
 
 # Enable SSL auto certification via Let's Encrypt and allow for multiple apps on a single web server.
 # Remove this section when using multiple web servers and ensure you terminate SSL at your load balancer.
