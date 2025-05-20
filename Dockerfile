@@ -32,13 +32,14 @@ WORKDIR /app
 COPY Gemfile /app
 COPY Gemfile.lock /app
 RUN bundle install --without development test
+RUN bundle show decidim-decidim_awesome
 
 COPY package.json /app
 COPY package-lock.json /app
 RUN npm ci
 
 COPY . /app
-RUN RAILS_ENV=production SECRET_KEY_BASE=build bin/rails assets:precompile
+RUN RAILS_ENV=production SECRET_KEY_BASE=build bin/rails assets:precompile --trace
 
 RUN rm -rf node_modules tmp/cache && \
   apt-get autoremove -y && apt-get clean
