@@ -6,7 +6,7 @@ ruby RUBY_VERSION
 
 gem "decidim", "0.29.2"
 gem "decidim-conferences"
-gem "decidim-decidim_awesome"
+# gem "decidim-decidim_awesome"
 gem "decidim-superspaces", git: "https://github.com/Platoniq/decidim-superspace", branch: "main"
 # gem "decidim-design", "0.29.2"
 # gem "decidim-initiatives", "0.29.2"
