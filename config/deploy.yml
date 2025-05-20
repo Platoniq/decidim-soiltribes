@@ -72,6 +72,12 @@ env:
     - AWS_REGION
     - AWS_BUCKET
 
+roles:
+  web:
+    healthcheck:
+      timeout: 60s
+      interval: 5s
+      retries: 3
 
 # Aliases are triggered with "bin/kamal <alias>". You can overwrite arguments on invocation:
 # "bin/kamal app logs -r job" will tail logs from the first server in the job section.
