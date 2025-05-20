@@ -40,7 +40,7 @@ RUN npm ci
 
 COPY . /app
 # RUN RAILS_ENV=production SECRET_KEY_BASE=build bin/rails assets:precompile --trace
-RUN RAILS_ENV=production DATABASE_URL=postgresql://fakehost:5432/fakedb SECRET_KEY_BASE=build bin/rails assets:precompile --trace
+RUN RAILS_ENV=production RAILS_SKIP_ASSET_COMPILATION_DB_CONNECTION=true SECRET_KEY_BASE=build bin/rails assets:precompile --trace
 
 RUN rm -rf node_modules tmp/cache && \
   apt-get autoremove -y && apt-get clean
