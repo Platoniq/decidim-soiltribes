@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/Platoniq/decidim-module-term_customizer
-  revision: 10033c18899c874b5bd9258ce69b5d7fbafb321e
-  branch: feat/fix-available-locales
+  revision: 3da4973f52649534fa9cc2acaaa4d89176a19351
+  branch: master
   specs:
     decidim-term_customizer (0.29.0)
       decidim-admin (~> 0.29.0)
