@@ -12,7 +12,6 @@ RUN apt-get update && apt-get install -y \
   git \
   libssl-dev \
   zlib1g-dev \
-  p7zip \
   libpq-dev \
   libicu-dev \
   imagemagick \
@@ -38,8 +37,8 @@ COPY package-lock.json /app
 RUN npm ci
 
 COPY . /app
-# RUN RAILS_ENV=production SECRET_KEY_BASE=build bin/rails assets:precompile --trace
-RUN RAILS_ENV=production SKIP_DB_CHECK=true SECRET_KEY_BASE=build bin/rails assets:precompile --trace
+# Modified to include DATABASE_URL and DISABLE_DEFACE
+RUN RAILS_ENV=production RAILS_GROUPS=assets SKIP_DB_CHECK=true DISABLE_DEFACE=true DATABASE_URL=postgresql://localhost:5432/dummy SECRET_KEY_BASE=build bin/rails assets:precompile --trace
 
 RUN rm -rf node_modules tmp/cache && \
   apt-get autoremove -y && apt-get clean
