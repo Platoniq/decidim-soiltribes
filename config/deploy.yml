@@ -54,7 +54,6 @@ env:
     DECIDIM_FORCE_SSL: false
     RAILS_ENV: production
     DECIDIM_ENABLE_HTML_HEADER_SNIPPETS: true
-    RAILS_SKIP_DB_CONNECTION: "true"
   secret:
     - RAILS_MASTER_KEY
     - SECRET_KEY_BASE
