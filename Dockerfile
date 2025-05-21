@@ -39,7 +39,8 @@ RUN npm ci
 
 COPY . /app
 # RUN RAILS_ENV=production SECRET_KEY_BASE=build bin/rails assets:precompile --trace
-RUN RAILS_ENV=production SKIP_DB_CHECK=true SECRET_KEY_BASE=build bin/rails assets:precompile --trace
+ENV RAILS_SKIP_DB_CONNECTION=true
+RUN RAILS_ENV=production SECRET_KEY_BASE=build bin/rails assets:precompile --trace
 
 RUN rm -rf node_modules tmp/cache && \
   apt-get autoremove -y && apt-get clean
