@@ -38,7 +38,7 @@ COPY package-lock.json /app
 RUN npm ci
 
 COPY . /app
-RUN RAILS_ENV=production SECRET_KEY_BASE=build bin/rails assets:precompile
+RUN RAILS_ENV=production SECRET_KEY_BASE=build bin/rails assets:precompile --trace
 
 RUN rm -rf node_modules tmp/cache && \
   apt-get autoremove -y && apt-get clean
@@ -49,6 +49,6 @@ COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT ["/usr/bin/entrypoint.sh"]
 
-HEALTHCHECK --interval=60s CMD curl -f http://localhost:3000/api || exit 1
+HEALTHCHECK CMD curl -f http://localhost:3000/api || exit 1
 
 CMD ["bin/rails", "server", "-b", "0.0.0.0"]
