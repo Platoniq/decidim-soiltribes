@@ -52,6 +52,10 @@
 /public/sw.js.br
 public/*.br
 public/*.gz
+public/sw.js.br
+public/sw.js.gz
+public/sw.js.map.br
+public/sw.js.map.gz
 
 # Ignore node modules
 /node_modules
