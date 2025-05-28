@@ -64,8 +64,6 @@ Rails.application.configure do
   # Use a real queuing backend for Active Job (and separate queues per environment).
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "decidim_soiltribes_production"
-  config.active_job.queue_adapter = :sidekiq
-  config.cache_store = :redis_cache_store, { url: ENV['REDIS_URL'] }
 
   config.action_mailer.perform_caching = false
 
@@ -90,8 +88,7 @@ Rails.application.configure do
     :password => Rails.application.secrets.smtp_password,
     :domain => Rails.application.secrets.smtp_domain,
     :enable_starttls_auto => Rails.application.secrets.smtp_starttls_auto,
-    :openssl_verify_mode => "none",
-    :host => ENV.fetch("APP_HOST", "soiltribes.platoniq.net")
+    :openssl_verify_mode => "none"
   }
 
   # Use a different logger for distributed setups.
