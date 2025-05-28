@@ -64,6 +64,7 @@ env:
     - AWS_REGION
     - AWS_BUCKET
     - REDIS_URL
+    - APP_HOST
 # Aliases are triggered with "bin/kamal <alias>". You can overwrite arguments on invocation:
 # "bin/kamal app logs -r job" will tail logs from the first server in the job section.
 #
