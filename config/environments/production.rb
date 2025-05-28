@@ -91,7 +91,7 @@ Rails.application.configure do
     :domain => Rails.application.secrets.smtp_domain,
     :enable_starttls_auto => Rails.application.secrets.smtp_starttls_auto,
     :openssl_verify_mode => "none",
-    :host => "soiltribes"
+    :host => ENV.fetch("APP_HOST", "soiltribes.platoniq.net")
   }
 
   # Use a different logger for distributed setups.
