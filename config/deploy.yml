@@ -55,7 +55,6 @@ env:
     RAILS_ENV: production
     DECIDIM_ENABLE_HTML_HEADER_SNIPPETS: true
     DECIDIM_CACHE_EXPIRATION_TIME: "10"
-
   secret:
     - RAILS_MASTER_KEY
     - SECRET_KEY_BASE
@@ -72,7 +71,6 @@ env:
     - AWS_SECRET_ACCESS_KEY
     - AWS_REGION
     - AWS_BUCKET
-    - REDIS_URL
 
 
 # Aliases are triggered with "bin/kamal <alias>". You can overwrite arguments on invocation:
