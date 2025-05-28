@@ -1,32 +1,28 @@
-<p class="email-greeting"><%= t("devise.mailer.invitation_instructions.hello", email: @resource.name) %></p>
+<p class="email-greeting" style="margin-bottom: 16px;"><%= t("devise.mailer.invitation_instructions.hello", email: @resource.name) %></p>
 
-<p class="email-instructions">
+<p class="email-instructions" style="margin-bottom: 16px;">
   <% if @resource.invited_by.present? %>
     <%= t("devise.mailer.invitation_instructions.invited_you_as_private_user", invited_by: @resource.invited_by.name, application: organization_name(@resource.organization)) %>
   <% else %>
     <%= t("devise.mailer.invitation_instructions.someone_invited_you_as_private_user", application: organization_name(@resource.organization)) %>
   <% end %>
 </p>
-<p class="email-instructions"> </p>
-<p class="email-instructions"><span>🌀</span> Your personal Circle is ready — a space to connect with fellow soil stewards, exchange knowledge, and co-create regenerative futures.<br /><span>🌍</span> To begin, click the link below to access the platform and set your nickname and password:</p>
+<p class="email-instructions" style="margin-bottom: 16px;"><span>🌀</span> Your personal Circle is ready — a space to connect with fellow soil stewards, exchange knowledge, and co-create regenerative futures.<br /><span>🌍</span> To begin, click the link below to access the platform and set your nickname and password:</p>
 
-<p class="email-button email-button__cta"><%= link_to t("devise.mailer.invitation_instructions.accept"), accept_invitation_url(@resource, invitation_token: @token, host: @resource.organization.host) %></p>
+<p class="email-button email-button__cta" style="margin-bottom: 16px;"><%= link_to t("devise.mailer.invitation_instructions.accept"), accept_invitation_url(@resource, invitation_token: @token, host: @resource.organization.host) %></p>
 
-<p class="email-instructions">
+<p class="email-instructions" style="margin-bottom: 16px;">
 As part of your first steps, we invite you to complete the “Dig In” Survey — a short reflection to close the loop from our Inception Gatherings. Your input will help shape our shared agenda, tools, and protocols.
 </p>
-<p class="email-instructions"> </p>
-<p class="email-instructions">
+<p class="email-instructions" style="margin-bottom: 16px;">
 <span>📋</span> [<a href="https://soiltribes.platoniq.net/assemblies/communityofpractice/f/22/" target="_blank">Complete the Dig In Survey</a>] (You’ll find it directly inside your Circle after logging in)
 </p>
 <% if @resource.invitation_due_at %>
-  <p class="email-small"><%= t("devise.mailer.invitation_instructions.accept_until", due_date: l(@resource.invitation_due_at, format: :long)) %></p>
+  <p class="email-small" style="margin-bottom: 16px;"><%= t("devise.mailer.invitation_instructions.accept_until", due_date: l(@resource.invitation_due_at, format: :long)) %></p>
 <% end %>
-<p class="email-instructions">
+<p class="email-instructions" style="margin-bottom: 16px;">
 <span>🔧</span> Need help logging in or navigating the platform? Reach out to Harrison, our community support lead: <span>📩</span> harrison@platoniq.net
 </p>
-<p class="email-instructions"> </p>
-<p class="email-instructions">
+<p class="email-instructions" style="margin-bottom: 16px;">
 Let’s root change together,<br />The SOILTRIBES Team
 </p>
-
