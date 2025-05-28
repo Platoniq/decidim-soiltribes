@@ -10,11 +10,11 @@ RUN apt-get update && apt-get install -y \
   git \
   libssl-dev \
   zlib1g-dev \
-  p7zip \
   libpq-dev \
   libicu-dev \
   imagemagick \
   wkhtmltopdf \
+  redis-tools \
   && apt-get clean && rm -rf /var/lib/apt/lists/*
 RUN mkdir -p /etc/apt/keyrings && \
   curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg && \
