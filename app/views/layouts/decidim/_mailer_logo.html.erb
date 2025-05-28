@@ -5,15 +5,11 @@
     <% url = decidim.root_url(host: organization.host) %>
   <% end %>
   <%= link_to url do %>
-    <% if organization.logo.attached? %>
-      <%= image_tag(
-            organization.attached_uploader(:logo).variant_url(:medium),
-            style: "max-height: 50px",
-            alt: organization_name(organization)
-          ) %>
-    <% else %>
-      <span><%= organization_name(organization) %></span>
-    <% end %>
+    <%= image_tag(
+          "/mailer-logo.png",
+          style: "max-height: 50px",
+          alt: organization_name(organization)
+        ) %>
   <% end %>
 <% else %>
   <%= Decidim.application_name %>
