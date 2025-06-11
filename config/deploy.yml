@@ -76,8 +76,6 @@ accessories:
         - POSTGRES_DB
     volumes:
       - pg-data:/var/lib/postgresql/data
-    networks:
-      - kamal
   redis:
     image: valkey/valkey:8
     host: soiltribes.platoniq.net
@@ -122,10 +120,3 @@ accessories:
         - AWS_REGION
         - AWS_BUCKET
         - REDIS_URL
-    networks:
-      - kamal
-
-# Reference the existing kamal network.
-networks:
-  kamal:
-    driver: bridge
