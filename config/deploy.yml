@@ -10,6 +10,7 @@ servers:
     hosts:
       - soiltribes.platoniq.net
 deploy_timeout: 120
+network: soiltribes-net
 
 # Enable SSL auto certification via Let's Encrypt and allow for multiple apps on a single web server.
 proxy:
