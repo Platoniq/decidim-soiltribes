@@ -58,6 +58,7 @@ env:
     - AWS_REGION
     - AWS_BUCKET
     - REDIS_URL
+    - REDIS_PASSWORD
 
 asset_path: /app/public
 
@@ -77,12 +78,14 @@ accessories:
   redis:
     image: valkey/valkey:8
     host: soiltribes.platoniq.net
-    cmd: valkey-server --requirepass ${REDIS_PASSWORD} --bind 127.0.0.1
+    cmd: valkey-server /etc/valkey/valkey.conf
     port: "127.0.0.1:6379:6379"
     labels:
       traefik.enable: false
     directories:
       - data:/data
+    volumes:
+      - /etc/valkey/valkey.conf:/etc/valkey/valkey.conf
   sidekiq:
     image: platoniq/decidim-soiltribes
     host: soiltribes.platoniq.net
@@ -116,3 +119,4 @@ accessories:
         - AWS_REGION
         - AWS_BUCKET
         - REDIS_URL
+        - REDIS_PASSWORD
