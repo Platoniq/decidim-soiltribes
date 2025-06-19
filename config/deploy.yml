@@ -8,7 +8,7 @@ image: platoniq/decidim-soiltribes
 servers:
   web:
     hosts:
-      - soiltribes.platoniq.net
+      - commons.soiltribes.eu
 deploy_timeout: 120
 network: soiltribes-net
 
