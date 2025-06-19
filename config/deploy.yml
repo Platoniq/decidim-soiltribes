@@ -5,7 +5,7 @@ image: platoniq/decidim-soiltribes
 # Deploy to these servers.
 servers:
   web:
-    - commons.soiltribes.eu
+    - commons.soiltribes.euss
   # job:
   #   hosts:
   #     - 192.168.0.1
