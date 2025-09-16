@@ -1,0 +1,6 @@
+example_id                                 | status | run_time        |
+------------------------------------------ | ------ | --------------- |
+./spec/lib/overrides_spec.rb[1:1]          | passed | 0.01593 seconds |
+./spec/system/eu_footer_spec.rb[1:1]       | passed | 0.66091 seconds |
+./spec/system/homepage_spec.rb[1:1]        | passed | 2.35 seconds    |
+./spec/system/platoniq_footer_spec.rb[1:1] | passed | 0.70472 seconds |
