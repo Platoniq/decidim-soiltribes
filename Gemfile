@@ -10,12 +10,12 @@ gem "bootsnap", "~> 1.3"
 
 gem "decidim", DECIDIM_VERSION
 gem "decidim-conferences"
-gem "decidim-decidim_awesome", git: "https://github.com/decidim-ice/decidim-module-decidim_awesome", branch: "main"
+gem "decidim-decidim_awesome", "~> 0.13.1"
 gem "decidim-design", DECIDIM_VERSION
 gem "decidim-initiatives", DECIDIM_VERSION
 gem "decidim-superspaces", git: "https://github.com/Platoniq/decidim-superspace", branch: "main"
 gem "decidim-templates", DECIDIM_VERSION
-# gem "decidim-term_customizer", git: "http s://github.com/Platoniq/decidim-module-term_customizer", branch: "master"
+gem "decidim-term_customizer", git: "https://github.com/Platoniq/decidim-module-term_customizer", branch: "main"
 
 gem "puma", ">= 6.3.1"
 

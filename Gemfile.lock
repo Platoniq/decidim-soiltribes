@@ -1,4 +1,13 @@
 GIT
+  remote: https://github.com/Platoniq/decidim-module-term_customizer
+  revision: 3a792afb1edd78421b63964f3d1eea6e091f759f
+  branch: main
+  specs:
+    decidim-term_customizer (0.30)
+      decidim-admin (~> 0.30.0)
+      decidim-core (~> 0.30.0)
+
+GIT
   remote: https://github.com/Platoniq/decidim-superspace
   revision: 3858d0c1505c2e33adc7710540988c30e10feefa
   branch: main
@@ -7,18 +16,6 @@ GIT
       decidim-conferences (>= 0.30.0, < 0.31)
       decidim-core (>= 0.30.0, < 0.31)
       deface (~> 1.9)
-
-GIT
-  remote: https://github.com/decidim-ice/decidim-module-decidim_awesome
-  revision: ba954a777d0d8a30930d006cd92606df13f10728
-  branch: main
-  specs:
-    decidim-decidim_awesome (0.13.0)
-      active_hashcash (~> 0.4.0)
-      decidim-admin (>= 0.30.0, < 0.31)
-      decidim-core (>= 0.30.0, < 0.31)
-      deface (>= 1.5)
-      sassc (~> 2.3)
 
 GEM
   remote: https://rubygems.org/
@@ -278,6 +275,12 @@ GEM
     decidim-debates (0.30.2)
       decidim-comments (= 0.30.2)
       decidim-core (= 0.30.2)
+    decidim-decidim_awesome (0.13.1)
+      active_hashcash (~> 0.4.0)
+      decidim-admin (>= 0.30.0, < 0.31)
+      decidim-core (>= 0.30.0, < 0.31)
+      deface (>= 1.5)
+      sassc (~> 2.3)
     decidim-design (0.30.2)
       decidim-core (= 0.30.2)
     decidim-dev (0.30.2)
@@ -891,12 +894,13 @@ DEPENDENCIES
   byebug (~> 11.0)
   decidim (= 0.30.2)
   decidim-conferences
-  decidim-decidim_awesome!
+  decidim-decidim_awesome (~> 0.13.1)
   decidim-design (= 0.30.2)
   decidim-dev (= 0.30.2)
   decidim-initiatives (= 0.30.2)
   decidim-superspaces!
   decidim-templates (= 0.30.2)
+  decidim-term_customizer!
   letter_opener_web (~> 2.0)
   listen (~> 3.1)
   net-imap (~> 0.2.3)
