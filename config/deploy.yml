@@ -5,7 +5,7 @@ image: platoniq/decidim-soiltribes
 # Deploy to these servers.
 servers:
   web:
-    - 188.34.186.145
+    - 116.203.142.173
   # job:
   #   hosts:
   #     - 192.168.0.1
@@ -17,7 +17,7 @@ deploy_timeout: 120
 # Note: If using Cloudflare, set encryption mode in SSL/TLS setting to "Full" to enable CF-to-app encryption.
 proxy:
   ssl: true
-  host: commons.soiltribes.eu,soiltribes.platoniq.net
+  host: soiltribes-staging.platoniq.net
   app_port: 3000
 # Credentials for your image host.
 registry:

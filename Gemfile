@@ -4,16 +4,17 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-DECIDIM_VERSION = "0.30.1"
+DECIDIM_VERSION = "0.30.2"
+
+gem "bootsnap", "~> 1.3"
 
 gem "decidim", DECIDIM_VERSION
 gem "decidim-conferences"
 gem "decidim-decidim_awesome", git: "https://github.com/decidim-ice/decidim-module-decidim_awesome", branch: "main"
-# gem "decidim-superspaces", git: "https://github.com/Platoniq/decidim-superspace", branch: "main"
-# gem "decidim-design", "0.30.1"
-# gem "decidim-initiatives", "0.30.1"
-# gem "decidim-templates", "0.30.1"
-gem "bootsnap", "~> 1.3"
+gem "decidim-design", DECIDIM_VERSION
+gem "decidim-initiatives", DECIDIM_VERSION
+gem "decidim-superspaces", git: "https://github.com/Platoniq/decidim-superspace", branch: "main"
+gem "decidim-templates", DECIDIM_VERSION
 # gem "decidim-term_customizer", git: "http s://github.com/Platoniq/decidim-module-term_customizer", branch: "master"
 
 gem "puma", ">= 6.3.1"
