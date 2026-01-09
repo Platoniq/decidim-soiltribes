@@ -17,6 +17,8 @@ gem "decidim-superspaces", git: "https://github.com/Platoniq/decidim-superspace"
 gem "decidim-templates", DECIDIM_VERSION
 gem "decidim-term_customizer", git: "https://github.com/Platoniq/decidim-module-term_customizer", branch: "main"
 
+gem "appsignal"
+
 gem "puma", ">= 6.3.1"
 
 gem "wicked_pdf", "~> 2.1"
