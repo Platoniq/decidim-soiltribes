@@ -2,7 +2,7 @@ name: Test
 on: [push]
 
 env:
-  RUBY_VERSION: 3.2.6
+  RUBY_VERSION: 3.3.4
   NODE_VERSION: 18.17.1
 
 jobs:
@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-24.04
     services:
       postgres:
-        image: postgres:11
+        image: postgres:14
         ports: ["5432:5432"]
         options: >-
           --health-cmd pg_isready
@@ -38,7 +38,7 @@ jobs:
           bundler-cache: true
       - uses: nanasess/setup-chromedriver@v2
       - run: |
-          sudo apt update && sudo apt install wkhtmltopdf
+          sudo apt update && sudo apt install wkhtmltopdf && sudo apt install imagemagick
       - run: bundle exec rake db:test:prepare
         name: Setup database
       - name: Precompile assets
