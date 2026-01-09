@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-DECIDIM_VERSION = "0.30.2"
+DECIDIM_VERSION = "0.30.4"
 
 gem "bootsnap", "~> 1.3"
 
