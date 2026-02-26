@@ -40,8 +40,8 @@ env:
     RAILS_SERVE_STATIC_FILES: true
     DECIDIM_APPLICATION_NAME: "Soiltribes"
     DECIDIM_MAILER_SENDER: no-reply@platoniq.net
-    DECIDIM_AVAILABLE_LOCALES: "en,es,ca"
-    DECIDIM_DEFAULT_LOCALE: "ca"
+    DECIDIM_AVAILABLE_LOCALES: "en, pl"
+    DECIDIM_DEFAULT_LOCALE: "en"
     STORAGE_PROVIDER: s3
     DECIDIM_FORCE_SSL: false
     RAILS_ENV: production
@@ -117,8 +117,8 @@ accessories:
         RAILS_SERVE_STATIC_FILES: true
         DECIDIM_APPLICATION_NAME: "Soiltribes"
         DECIDIM_MAILER_SENDER: no-reply@platoniq.net
-        DECIDIM_AVAILABLE_LOCALES: "en,es,ca"
-        DECIDIM_DEFAULT_LOCALE: "ca"
+        DECIDIM_AVAILABLE_LOCALES: "en, pl"
+        DECIDIM_DEFAULT_LOCALE: "en"
         STORAGE_PROVIDER: s3
         DECIDIM_FORCE_SSL: false
         RAILS_ENV: production
