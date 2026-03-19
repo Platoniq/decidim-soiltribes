@@ -40,7 +40,6 @@ env:
     RAILS_SERVE_STATIC_FILES: true
     DECIDIM_APPLICATION_NAME: "Soiltribes"
     DECIDIM_MAILER_SENDER: no-reply@platoniq.net
-    DECIDIM_AVAILABLE_LOCALES: "en,es,ca"
     DECIDIM_DEFAULT_LOCALE: "ca"
     STORAGE_PROVIDER: s3
     DECIDIM_FORCE_SSL: false
@@ -65,6 +64,7 @@ env:
     - AWS_BUCKET
     - REDIS_URL
     - APPSIGNAL_PUSH_API_KEY
+    - DECIDIM_AVAILABLE_LOCALES
 # Aliases are triggered with "bin/kamal <alias>". You can overwrite arguments on invocation:
 # "bin/kamal app logs -r job" will tail logs from the first server in the job section.
 #
@@ -117,7 +117,6 @@ accessories:
         RAILS_SERVE_STATIC_FILES: true
         DECIDIM_APPLICATION_NAME: "Soiltribes"
         DECIDIM_MAILER_SENDER: no-reply@platoniq.net
-        DECIDIM_AVAILABLE_LOCALES: "en,es,ca"
         DECIDIM_DEFAULT_LOCALE: "ca"
         STORAGE_PROVIDER: s3
         DECIDIM_FORCE_SSL: false
