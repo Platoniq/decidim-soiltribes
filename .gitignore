@@ -64,3 +64,4 @@ public/sw.js.map.gz
 
 # Ignore Tailwind configuration
 tailwind.config.js
+/public/sw.js*
