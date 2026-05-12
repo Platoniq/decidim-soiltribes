@@ -1,0 +1,41 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bundle exec *)",
+      "Read(//usr/local/**)",
+      "Bash(xargs cat)",
+      "Bash(mkdir -p /Users/hhassig/.claude/projects/-Users-hhassig-Documents-code-platoniq-decidim-soiltribes/memory)",
+      "Bash(xargs ls)",
+      "Bash(psql -U postgres -h localhost -p 5432 -d decidim_soiltribes_development -c \"SELECT id, name->>'en' as name FROM decidim_taxonomies WHERE parent_id IS NULL ORDER BY id;\")",
+      "Bash(psql -U postgres -h 127.0.0.1 -c \"\\\\l\")",
+      "Bash(psql -U postgres -h localhost -c \"\\\\l\")",
+      "Bash(psql -c \"\\\\l\")",
+      "Bash(psql postgres *)",
+      "Bash(psql decidim_soiltribes_development -c \"SELECT id, name->>'en' as name FROM decidim_taxonomies WHERE parent_id IS NULL ORDER BY id;\")",
+      "Bash(psql decidim_soiltribes_development -c \"SELECT id, name->>'en' as name, parent_id FROM decidim_taxonomies WHERE parent_id IS NOT NULL ORDER BY parent_id, id;\")",
+      "Bash(psql decidim_soiltribes_development -c 'SELECT '\\\\''assembly'\\\\'' as type, id, title->>'\\\\''en'\\\\'' as title FROM decidim_assemblies WHERE deleted_at IS NULL AND published_at IS NOT NULL *)",
+      "Bash(psql decidim_soiltribes_development -c \"SELECT id, root_taxonomy_id, participatory_space_manifests FROM decidim_taxonomy_filters;\")",
+      "Bash(psql decidim_soiltribes_development -c \"SELECT COUNT\\(*\\) FROM decidim_taxonomizations WHERE taxonomizable_type IN \\('Decidim::Assembly','Decidim::ParticipatoryProcess','Decidim::Conference'\\);\")",
+      "Bash(DISABLE_SPRING=1 bundle exec rails runner ' *)",
+      "Bash(psql decidim_soiltribes_development -c ' *)",
+      "Bash(psql decidim_soiltribes_development -c \"SELECT COUNT\\(*\\) FROM decidim_organizations;\")",
+      "Bash(psql decidim_soiltribes_development -c \"SELECT id, host, name FROM decidim_organizations;\")",
+      "Bash(DISABLE_SPRING=1 bundle exec rails runner 'raw = {\"1\" => [\"\"]}; ids = Array\\(raw[\"1\"]\\).flatten.compact_blank; puts ids.inspect; puts ids.empty?.inspect; puts \"\".blank?.inspect')",
+      "Bash(DISABLE_SPRING=1 bundle exec rails runner 'spaces = Decidim::Assembly.public_spaces.to_a + Decidim::ParticipatoryProcess.public_spaces.to_a + Decidim::Conference.public_spaces.to_a; arr = Kaminari.paginate_array\\(spaces\\); paged = arr.page\\(1\\).per\\(25\\); puts \"total_count=#{paged.total_count} count=#{paged.count}\"')",
+      "Bash(psql decidim_soiltribes_development -c \"SELECT id, name->>'en' as name, parent_id, part_of FROM decidim_taxonomies ORDER BY id;\")",
+      "Bash(psql decidim_soiltribes_development -c \"SELECT 'process' as type, id, LEFT\\(title->>'en',40\\) as title, private_space, published_at IS NOT NULL as published FROM decidim_participatory_processes ORDER BY id;\")",
+      "Bash(psql decidim_soiltribes_development -c \"SELECT 'assembly' as type, id, LEFT\\(title->>'en',40\\) as title, private_space, published_at IS NOT NULL as published, deleted_at IS NULL as not_deleted FROM decidim_assemblies ORDER BY id;\")",
+      "Bash(psql decidim_soiltribes_development -c \"SELECT id, root_taxonomy_id, participatory_space_manifests, filter_items_count, components_count FROM decidim_taxonomy_filters WHERE id = 1;\")",
+      "Bash(psql decidim_soiltribes_development -c \"SELECT * FROM decidim_taxonomy_filter_items WHERE taxonomy_filter_id = 1;\")",
+      "Bash(psql decidim_soiltribes_development -c \"SELECT tf.id, tf.participatory_space_manifests, array_agg\\(tfi.taxonomy_item_id\\) as item_ids FROM decidim_taxonomy_filters tf LEFT JOIN decidim_taxonomy_filter_items tfi ON tfi.taxonomy_filter_id = tf.id GROUP BY tf.id, tf.participatory_space_manifests ORDER BY tf.id;\")",
+      "Bash(DISABLE_SPRING=1 bundle exec ruby -c app/controllers/decidim/taxonomy_spaces_controller.rb)",
+      "Bash(pkill -f \"rails server\")",
+      "Bash(pkill -f \"puma\")",
+      "Bash(lsof -ti:3000)",
+      "Bash(xargs kill -9)"
+    ],
+    "additionalDirectories": [
+      "/Users/hhassig/.claude/projects/-Users-hhassig-Documents-code-platoniq-decidim-soiltribes"
+    ]
+  }
+}

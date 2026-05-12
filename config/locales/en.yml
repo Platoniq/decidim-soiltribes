@@ -168,6 +168,14 @@ en:
         one: 1 second
         other: "%{count} seconds"
   decidim:
+    taxonomy_spaces:
+      index:
+        title: All Spaces
+        menu_item: Filters
+        spaces_count:
+          one: "%{count} space"
+          other: "%{count} spaces"
+        empty: No spaces match the selected filters.
     accessibility:
       external_link: External link
       front_page_link: Go to front page
