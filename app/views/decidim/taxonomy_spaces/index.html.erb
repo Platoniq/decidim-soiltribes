@@ -1,38 +1,8 @@
-<% content_for :header_snippets do %>
-  <meta name="turbo-cache-control" content="no-cache">
-<% end %>
-
 <% content_for :aside do %>
   <h1 class="title-decorator"><%= t("decidim.taxonomy_spaces.index.title") %></h1>
 
   <%= render partial: "decidim/shared/filters", locals: { filter_sections:, skip_to_id: "spaces-grid" } %>
 <% end %>
-
-<script>
-  document.addEventListener("turbo:load", function () {
-    var globalLabel = document.querySelector("label[data-global-checkbox]");
-    if (!globalLabel) return;
-
-    var form = globalLabel.closest("form");
-    if (!form) return;
-
-    // The actual checkbox input linked to the "All" label
-    var globalInput = document.getElementById(globalLabel.getAttribute("for"));
-    if (!globalInput) return;
-
-    globalInput.addEventListener("change", function () {
-      var willBeChecked = globalInput.checked;
-
-      // Find every child checkbox in this filter form
-      var childInputs = Array.from(
-        form.querySelectorAll("input[type='checkbox']")
-      ).filter(function (cb) { return cb !== globalInput; });
-
-      // Sync their checked state so the form submission reflects the visual state
-      childInputs.forEach(function (cb) { cb.checked = willBeChecked; });
-    }, true); // capture phase — runs before data-filters auto-submit
-  });
-</script>
 
 <%= render layout: "layouts/decidim/shared/layout_two_col" do %>
   <section id="spaces-grid" class="layout-main__section layout-main__heading">
