@@ -32,7 +32,8 @@
       "Bash(pkill -f \"rails server\")",
       "Bash(pkill -f \"puma\")",
       "Bash(lsof -ti:3000)",
-      "Bash(xargs kill -9)"
+      "Bash(xargs kill -9)",
+      "Bash(DISABLE_SPRING=1 bundle exec rubocop app/controllers/decidim/taxonomy_spaces_controller.rb)"
     ],
     "additionalDirectories": [
       "/Users/hhassig/.claude/projects/-Users-hhassig-Documents-code-platoniq-decidim-soiltribes"

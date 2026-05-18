@@ -14,10 +14,11 @@ module Decidim
     def spaces
       @spaces ||= begin
         leaf_ids = selected_taxonomy_ids
-        space_classes.flat_map do |klass|
+        results = space_classes.flat_map do |klass|
           all = klass.public_spaces.includes(:taxonomies).to_a
-          leaf_ids.any? ? all.select { |s| (s.taxonomies.map(&:id) & leaf_ids).any? } : all
-        end.sort_by { |s| s.published_at || Time.at(0) }.reverse
+          leaf_ids.any? ? all.select { |s| s.taxonomies.map(&:id).intersect?(leaf_ids) } : all
+        end
+        results.sort_by { |s| s.published_at || Time.zone.at(0) }.reverse
       end
     end
 
