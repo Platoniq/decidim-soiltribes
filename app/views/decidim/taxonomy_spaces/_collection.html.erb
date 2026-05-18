@@ -1,15 +1,26 @@
+<% total_count = grouped_spaces.sum { |_, items| items.size } %>
 <h2 class="h5 md:h3 decorator">
-  <%= t("decidim.taxonomy_spaces.index.spaces_count", count: collection.total_count) %>
+  <%= t("decidim.taxonomy_spaces.index.spaces_count", count: total_count) %>
 </h2>
 
-<% if collection.any? %>
-  <div class="card__grid-grid">
-    <% collection.each do |space| %>
-      <%= card_for space %>
-    <% end %>
-  </div>
-
-  <%= decidim_paginate collection %>
+<% if grouped_spaces.any? %>
+  <% grouped_spaces.each do |klass, items| %>
+    <div class="content-block">
+      <div class="content-block__title">
+        <h2 class="h2 decorator"><%= space_type_label(klass) %></h2>
+        <div class="label text-lg"><%= items.size %></div>
+        <%= link_to space_type_path(klass), class: "button button__sm button__text-secondary" do %>
+          <span><%= t("decidim.taxonomy_spaces.index.see_all") %></span>
+          <%= icon "arrow-right-line" %>
+        <% end %>
+      </div>
+      <div class="card__grid-grid">
+        <% items.each do |space| %>
+          <%= card_for space %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
 <% else %>
   <p><%= t("decidim.taxonomy_spaces.index.empty") %></p>
 <% end %>

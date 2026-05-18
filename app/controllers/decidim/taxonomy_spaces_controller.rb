@@ -2,10 +2,8 @@
 
 module Decidim
   class TaxonomySpacesController < Decidim::ApplicationController
-    include Paginable
-
     helper Decidim::TaxonomySpacesHelper
-    helper_method :filter, :filter_params, :collection
+    helper_method :filter, :filter_params, :grouped_spaces
 
     def index; end
 
@@ -22,8 +20,13 @@ module Decidim
       end
     end
 
-    def collection
-      @collection ||= paginate(Kaminari.paginate_array(spaces))
+    def grouped_spaces
+      @grouped_spaces ||= begin
+        order = space_classes.map(&:name)
+        spaces.group_by(&:class)
+              .sort_by { |klass, _| order.index(klass.name) || order.size }
+              .to_h
+      end
     end
 
     def selected_taxonomy_ids
@@ -49,10 +52,10 @@ module Decidim
 
     def space_classes
       @space_classes ||= [
-        ("Decidim::Assembly" if defined?(Decidim::Assembly)),
+        ("Decidim::Superspaces::Superspace" if defined?(Decidim::Superspaces::Superspace)),
         ("Decidim::ParticipatoryProcess" if defined?(Decidim::ParticipatoryProcess)),
-        ("Decidim::Conference" if defined?(Decidim::Conference)),
-        ("Decidim::Superspaces::Superspace" if defined?(Decidim::Superspaces::Superspace))
+        ("Decidim::Assembly" if defined?(Decidim::Assembly)),
+        ("Decidim::Conference" if defined?(Decidim::Conference))
       ].compact.map(&:constantize)
     end
 

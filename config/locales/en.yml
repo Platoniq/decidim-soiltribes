@@ -178,10 +178,16 @@ en:
       index:
         title: All Spaces
         menu_item: Filters
+        see_all: See all
         spaces_count:
           one: "%{count} space"
           other: "%{count} spaces"
         empty: No spaces match the selected filters.
+        space_types:
+          superspaces: Superspaces
+          assemblies: Assemblies
+          processes: Participatory Processes
+          conferences: Conferences
     accessibility:
       external_link: External link
       front_page_link: Go to front page

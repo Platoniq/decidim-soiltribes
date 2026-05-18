@@ -1,3 +1,10 @@
+<% content_for :header_snippets do %>
+  <style>
+    .layout-2col__aside { grid-column: span 3 / span 3; padding-right: 2rem; }
+    .layout-2col__main  { grid-column: span 9 / span 9; padding-left: 2rem; }
+  </style>
+<% end %>
+
 <% content_for :aside do %>
   <h1 class="title-decorator"><%= t("decidim.taxonomy_spaces.index.title") %></h1>
 
