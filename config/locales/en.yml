@@ -168,6 +168,12 @@ en:
         one: 1 second
         other: "%{count} seconds"
   decidim:
+    superspaces:
+      admin:
+        superspaces:
+          form:
+            no_taxonomy_filters_found: No taxonomy filters found.
+            define_taxonomy_filters: Define taxonomy filters
     taxonomy_spaces:
       index:
         title: All Spaces

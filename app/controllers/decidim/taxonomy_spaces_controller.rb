@@ -50,7 +50,8 @@ module Decidim
       @space_classes ||= [
         ("Decidim::Assembly" if defined?(Decidim::Assembly)),
         ("Decidim::ParticipatoryProcess" if defined?(Decidim::ParticipatoryProcess)),
-        ("Decidim::Conference" if defined?(Decidim::Conference))
+        ("Decidim::Conference" if defined?(Decidim::Conference)),
+        ("Decidim::Superspaces::Superspace" if defined?(Decidim::Superspaces::Superspace))
       ].compact.map(&:constantize)
     end
 
