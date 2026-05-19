@@ -184,10 +184,10 @@ en:
           other: "%{count} spaces"
         empty: No spaces match the selected filters.
         space_types:
-          superspaces: Superspaces
-          assemblies: Assemblies
-          processes: Participatory Processes
-          conferences: Conferences
+          superspaces: Constellations
+          assemblies: Circles
+          processes: Pathways
+          conferences: Gatherings
     accessibility:
       external_link: External link
       front_page_link: Go to front page
