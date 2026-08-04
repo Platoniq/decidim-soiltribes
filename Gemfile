@@ -20,6 +20,7 @@ gem "decidim-term_customizer", git: "https://github.com/Platoniq/decidim-module-
 gem "appsignal"
 
 gem "puma", ">= 6.3.1"
+gem "rack-attack", "~> 6.7"
 
 gem "wicked_pdf", "~> 2.1"
 
