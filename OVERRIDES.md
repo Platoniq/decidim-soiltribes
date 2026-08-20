@@ -12,7 +12,7 @@ Copied or patched via an `*Override` concern. Needs a real diff of upstream old-
 
 | package | file | recorded checksum |
 |---|---|---|
-| `decidim-core` | `/app/helpers/decidim/layout_helper.rb` | `7941b929…` |
+| `decidim-core` | `/app/helpers/decidim/layout_helper.rb` | `9a098e2d…` |
 
 ## Views (4)
 
