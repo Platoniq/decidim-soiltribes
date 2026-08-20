@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 # This migration comes from decidim (originally 20250819110800)
+# This file has been modified by `decidim upgrade:migrations` task on 2026-08-20 08:48:28 UTC
 # This migration comes from decidim (originally 20250819110800)
+# This file has been modified by `decidim upgrade:migrations` task on 2026-08-20 08:48:28 UTC
 class ConvertPrivateExportsIdToUuid < ActiveRecord::Migration[7.0]
   def up
-    return if column_exists?(:decidim_private_exports, :uuid)
-
     create_table :decidim_private_exports_new, force: :cascade do |t|
       t.uuid :uuid, null: false
       t.string :export_type, null: false
@@ -33,8 +33,6 @@ class ConvertPrivateExportsIdToUuid < ActiveRecord::Migration[7.0]
   end
 
   def down
-    return unless column_exists?(:decidim_private_exports, :uuid)
-
     # Similar approach for rollback
     create_table :decidim_private_exports_new, id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
       t.string :export_type, null: false
