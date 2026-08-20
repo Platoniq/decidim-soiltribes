@@ -4,18 +4,18 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-DECIDIM_VERSION = "0.30.9"
+DECIDIM_VERSION = "0.31.4"
 
 gem "bootsnap", "~> 1.3"
 
 gem "decidim", DECIDIM_VERSION
 gem "decidim-conferences"
-gem "decidim-decidim_awesome", "~> 0.13.1"
+gem "decidim-decidim_awesome", git: "https://github.com/decidim-ice/decidim-module-decidim_awesome", branch: "release/0.31-stable"
 gem "decidim-design", DECIDIM_VERSION
 gem "decidim-initiatives", DECIDIM_VERSION
-gem "decidim-superspaces", git: "https://github.com/Platoniq/decidim-superspace", branch: "main"
+gem "decidim-superspaces", git: "https://github.com/Platoniq/decidim-superspace", branch: "deps/decidim-0.31"
 gem "decidim-templates", DECIDIM_VERSION
-gem "decidim-term_customizer", github: "openpoke/decidim-module-term_customizer", branch: "release/0.30-stable"
+gem "decidim-term_customizer", github: "openpoke/decidim-module-term_customizer", branch: "release/0.31-stable"
 
 gem "appsignal"
 
