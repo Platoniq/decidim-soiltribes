@@ -6,6 +6,10 @@ image: platoniq/decidim-soiltribes
 servers:
   web:
     - 116.203.142.173
+  workers:
+    hosts:
+      - 116.203.142.173
+    cmd: bundle exec sidekiq
   # job:
   #   hosts:
   #     - 192.168.0.1
@@ -109,36 +113,3 @@ accessories:
     port: "127.0.0.1:6379:6379"
     directories:
       - data:/data
-  sidekiq:
-    image: platoniq/decidim-soiltribes
-    host: 116.203.142.173
-    cmd: bundle exec sidekiq
-    env:
-      clear:
-        RAILS_SERVE_STATIC_FILES: true
-        DECIDIM_APPLICATION_NAME: "Soiltribes"
-        DECIDIM_MAILER_SENDER: no-reply@platoniq.net
-        DECIDIM_DEFAULT_LOCALE: "ca"
-        STORAGE_PROVIDER: s3
-        DECIDIM_FORCE_SSL: false
-        RAILS_ENV: production
-        DECIDIM_ENABLE_HTML_HEADER_SNIPPETS: true
-        DECIDIM_CACHE_EXPIRATION_TIME: "10"
-        DISABLE_EMAIL_DELIVERY: true
-      secret:
-        - RAILS_MASTER_KEY
-        - SECRET_KEY_BASE
-        - DATABASE_URL
-        - SMTP_ADDRESS
-        - SMTP_USERNAME
-        - SMTP_PASSWORD
-        - SMTP_DOMAIN
-        - SMTP_STARTTLS_AUTO
-        - POSTGRES_PASSWORD
-        - POSTGRES_USER
-        - POSTGRES_DB
-        - AWS_ACCESS_KEY_ID
-        - AWS_SECRET_ACCESS_KEY
-        - AWS_REGION
-        - AWS_BUCKET
-        - REDIS_URL
