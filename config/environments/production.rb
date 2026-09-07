@@ -91,6 +91,13 @@ Rails.application.configure do
     :openssl_verify_mode => "none"
   }
 
+  # Staging holds a copy of production's data, real addresses included, so mail
+  # goes to a file rather than SES.
+  if ENV["DISABLE_EMAIL_DELIVERY"] == "true"
+    config.action_mailer.delivery_method = :file
+    config.action_mailer.file_settings = { location: Rails.root.join("tmp/mails") }
+  end
+
   # Use a different logger for distributed setups.
   # require "syslog/logger"
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new "app-name")

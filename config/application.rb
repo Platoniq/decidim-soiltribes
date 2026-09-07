@@ -19,6 +19,15 @@ module DecidimSoiltribes
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.2
 
+    # Rails 7.1 removed Rails.application.secrets, which this app still reads.
+    # Defined here rather than in an initializer because config/environments
+    # reads secrets during bootstrap, before initializers run.
+    def secrets
+      @secrets ||= ActiveSupport::OrderedOptions.new.merge(
+        config_for(:secrets).deep_symbolize_keys
+      )
+    end
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
