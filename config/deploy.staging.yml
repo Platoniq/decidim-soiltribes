@@ -52,6 +52,8 @@ env:
     DECIDIM_ENABLE_HTML_HEADER_SNIPPETS: true
     DECIDIM_CACHE_EXPIRATION_TIME: "10"
     DISABLE_EMAIL_DELIVERY: true
+    # Staging shares production's S3 bucket: never delete files from it (config/initializers/storage_delete_guard.rb).
+    DISABLE_STORAGE_DELETES: true
   secret:
     - RAILS_MASTER_KEY
     - SECRET_KEY_BASE
