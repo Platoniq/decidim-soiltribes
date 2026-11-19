@@ -1,4 +1,4 @@
-FROM ruby:3.3.4-slim
+FROM ruby:3.3.14-slim
 ENV DEBIAN_FRONTEND=noninteractive \
   RAILS_ENV=production \
   BUNDLE_WITHOUT=development:test \
